@@ -1,0 +1,140 @@
+          Patching Async Professional version 2.02 to 2.03
+          ------------------------------------------------
+                         TurboPower Software
+                    Patch scripts updated 95/10/20
+
+APR203.EXE is a self-extracting archive that contains patch files to
+transform Async Professional version 2.02 into version 2.03. The patch
+file was generated using Pocket Soft's .RTPatch utility (version 2.01).
+
+The patch application program PATCH.EXE is required to apply this
+patch. You'll find PATCH.EXE in your \APRO\BONUS subdirectory. If you
+didn't install the APRO 2.02 bonus files or for some other reason
+cannot find PATCH.EXE, you can download it from the same place where
+you found APR203.EXE. You'll probably want to keep a copy of PATCH.EXE,
+since it can be used to apply all TurboPower maintenance patches.
+
+APR203.EXE contains one patch file, which you should extract or copy
+into your \APRO subdirectory. Then move into that subdirectory and
+enter the following command at the DOS prompt:
+
+    PATCH APRO203
+
+PATCH provides running status of the patch process, and displays a
+summary when patching is complete.
+
+You can delete the patch file (extension .RTP) from your \APRO
+directory once patching is complete. You'll probably want to keep
+APR203.EXE for a while, in case repatching is required (see below).
+
+As with any TurboPower update, see the READ.ME, READ.1ST, and FASTUPD
+files for information about the new version.
+
+Download UPDATE.TXT from the same place where you found APR203.EXE for
+additional background information about the patching process, available
+patch files, etc.
+
+
+Be aware of the following limitations of the patching process:
+--------------------------------------------------------------
+
+1. The patch only works to bring version 2.02 up to 2.03. We don't
+provide patches for major updates (1.XX to 2.XX). You can contact our
+sales line (800-333-4160, 719-260-9136) for more information on
+purchasing this update.
+
+2. Dependent files that you can rebuild yourself are *not* patched.
+This keeps the size of the patch file to a minimum. In many cases, such
+patches would be wasted anyway, since there are so many different ways
+the dependent files can be created (with varying defines, compiler
+options, compiler versions, etc.). Files with the extensions EXE, HLP,
+TPU, TPP and DLL are not patched unless they depend on source code or
+other files that aren't part of Async Professional. Be sure to remake
+all dependent files after you install the patch. All files but the HLP
+file can be remade by using the supplied make or project files, or just
+by compiling them into your application. The HLP file can be recreated
+by entering the following command in the \APRO directory (or wherever
+you have stored your APRO help files):
+
+  MAKEHELP /Q APRO
+
+Note in particular that COMTESTO.EXE is not part of the patch. If you
+use this program, be sure to recompile it after applying the patch.
+This program is made by APROO.MAK. On the other hand, OOPCOM.EXE and
+OOPINST.EXE *are* part of the patch, since they depend on Object
+Professional.
+
+3. If you didn't originally install all of Async Professional, then
+of course PATCH can't update the uninstalled portion of the library.
+This isn't a problem unless you later install the rest of the older
+version. In that case, you must reuse the patch to bring the newly
+installed files up to the current version.
+
+PATCH does not attempt to patch archive (.LZH) files. You must
+dearchive all files that you wish to patch. This applies to BONUS
+files as well as production files.
+
+4. PATCH can't find files that you have moved out of the \APRO
+directory. It *can* find files in subdirectories of this directory,
+however.
+
+5. PATCH doesn't attempt to update certain files because they are
+updated automatically during installation or when you configure the
+library for your application. Because these files have been customized
+for your system, PATCH cannot make reliable changes to them. Even so,
+it's often important for us to distribute updated versions of these
+files, since there may be new defines and dependencies in them. We
+decide on a file by file basis whether to distribute a new copy of
+these files or to allow your existing version to remain intact. Here is
+a list of affected files for APRO 2.02:
+
+  Directory         Filename      In Patch?  New Name or Directory?
+  ----------------  ------------  ---------  ----------------------
+  \APRO             APDEFINE.INC  New copy   APDEFINE.203
+  \APRO             SIMPCOM.DAT   No
+  \APRO\OOPCOM      OOPCOM.CFG    No
+  \APRO\OOPCOM      OOPCOM.PB     No
+  \APRO\TPFAX       TPFAX.PB      No
+  \APRO\TPFAX       TPFAX.INI     No
+  \APRO\TPFAX       TPFAX.DT      No
+
+When one of these files is distributed as part of the patch, a complete
+new copy of it is included, since PATCH probably cannot patch your
+modified copy. Where appropriate, the final column of this table shows
+the name or directory of the new copy of the file. Be sure to look at
+this new file, modify it as appropriate for your environment, and copy
+it over the old version before proceeding.
+
+6. If you modified the TurboPower source code, PATCH refuses to apply
+changes to the modified files. (It uses a checksum algorithm to assure
+that the file it is patching is the intended version.) In this case,
+the only way to get a valid set of patched files is to reinstall an
+unmodified copy of Async Professional and patch it, then make your
+changes to the new version.
+
+7. APRO 2.03 introduces a significant new modem control system,
+including a database of 100+ modems. All of the new files for this new
+modem control system are placed in the root APRO directory. See
+READ.1ST and MODEM2.DOC for more information.
+
+8. APRO.TPH, the help file for the Borland IDE's, is not included with
+this patch. Including it would have nearly doubled the size of the
+patch file and it changed very little from version 2.02. If you want an
+updated version of APRO.TPH, download APROTPH.LZH from the same place
+you downloaded APRO.TPH.
+
+If you have questions or problems regarding the patch, please contact
+us:
+
+  TurboPower Software
+  P.O. Box 49009
+  Colorado Springs, CO 80949-9009
+
+  voice: 719-260-6641
+  fax:   719-260-7151
+  BBS:   719-260-9726
+
+  CompuServe ID: 76004,2611
+  Pascal forum:  PCVENB section 6
+  C/C++ forum:   PCVENE section 1
+  Internet:      76004.2611@compuserve.com

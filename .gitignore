@@ -1,0 +1,28 @@
+ignorecase = true
+# don't want to include any of the build artifacts or
+# IDE config (.cfg) files.
+
+!bonus/cas12.com
+!help/makehelp.exe
+!help/megapaga.exe
+!help/pophelp.exe
+!oopcom/oopcom.exe
+!oopcom/oopcom.ovr
+!oopcom/oopinst.exe
+!tpfax/tpfax.exe
+!tpfax/tpfax.ovr
+
+#
+install/*.*
+zips/*.*
+#
+!tools/printdoc.exe
+#
+src/*.tpu
+src/*.tpp
+#
+src/*.obj
+src/*.exe
+src/*.com
+src/tpc.cfg
+src/bpc.cfg

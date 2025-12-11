@@ -18,7 +18,7 @@ While doing research for this project, I found that I had version 2.00 of Async 
 
 Async Professional can be built using Turbo Pascal versions 5.5 to 7.0, and Borland Pascal v7.0.  In the case of Borland Pascal 7.0, units can be built for both real mode (TPU) and protected mode (TPP).  The build process also requires Turbo Assembler v1.0 or greater, or Microsoft Assembler v4.0 or greater in order to assemble the .ASM files.  You'll need to ensure that your build tools are in your DOS path.
 
-The file SRC\APDEFINE.INC has settings that can be changed in order to affect how Turbo Professional is built and functions.  It would be worth your time to peruse that file - note that unless you know **why** you're going to change something, you probably should leave it the default.
+The file SRC\APDEFINE.INC has settings that can be changed in order to affect how Async Professional is built and functions.  It would be worth your time to peruse that file - note that unless you know **why** you're going to change something, you probably should leave it the default.
 
 The Makefiles for Async Professional can be found in `SRC\APRO.MAK` and `SRC\APROO.MAK`.  These files will allow you to adjust a number of different things about how the units are built.  I recommend going through it - the settings it uses are very well documented.  Note that the Makefile uses the Borland Make syntax.  The `APRO.MAK` file will build the procedural version of Async Professional, while `APROO.MAK` will build the object oriented version.
 
